@@ -37,10 +37,7 @@ namespace gamebyme
                         append_item(temp_name, temp_sellin, temp_quality);
                         break;
                     case "NEXT":
-                        foreach (var item in items)
-                        {
-                            item.QualityUpdate();
-                        }
+                        foreach (var item in items){item.QualityUpdate();}
                         break;
                     case "REMOVE":
                         Console.Clear();
@@ -51,7 +48,7 @@ namespace gamebyme
                         }
                         Console.Write("Zvol index: ");
                         int index = int.Parse(Console.ReadLine());
-                        if (index < items.Count || index > 0) items.RemoveAt(index); else error_print();
+                        if (index < items.Count && index > 0) items.RemoveAt(index); else error_print();
                         break;
                     default:
                         error_print();
